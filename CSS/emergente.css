@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open sans", Arial, sans-serif;
+}
+
+button {
+  background: white;
+  border: 2px solid #aaa;
+  border-radius: 5px;
+  color: #777;
+  padding: 8px 12px;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all .2s ease-in;
+}
+button:hover {
+  color: black;
+  border-color: black;
+}
+button:focus{
+  outline: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0, .6);
+  visibility: hidden;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+  background: white;
+  top: 30%;
+  left: 50%;
+  width: 80%;
+  margin-left: -40%;
+  padding: 20px;
+  border-radius: 3px;
+  box-shadow: 0 3px 3px rgba(0,0,0,.4);
+  visibility: hidden;
+  transform: translateY(-200px);
+  transition: transform .4s ease-out;
+}
+.modal p:first-child {
+  margin-top: 0;
+}
+.modal__title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.modal__close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  color: black;
+  text-decoration: none;
+  transition: transform .3s ease-out;
+}
+.modal__close:hover {
+  transform: rotateZ(90deg) scale(1.5);
+}
+
+.modal-shown .modal {
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.modal-shown .overlay {
+  visibility: visible;
+}
